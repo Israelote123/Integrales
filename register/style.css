@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&display=swap');
+
+@font-face {
+    font-family: 'Grandista';
+    src: url(../font/Grandista.woff2) format(woff2);
+}
+
+@font-face {
+    font-family: 'Patrick Hand';
+    src: url(../font/PatrickHand-Regular.ttf) format(ttf);
+}
+
+@keyframes clickOn {
+    from {
+  background-color
+  : rgb(255, 255, 255);}
+    to {
+  border: 1px solid black;
+  background-color
+  : lightgrey;}
+  }
+
+/* Barra de navegación*/
+.logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 20%;
+    margin:0%;
+}
+
+h1.titulo {
+    font-family: "Grandista";
+}
+
+#barraNav{
+    background-color: turquoise;
+    padding: 10px;
+    margin: 0;
+    padding-left: 0;
+    margin-left: 0;
+    border: turquoise;
+}
+
+/*Cuerpo*/
+body { 
+    background-color: rgba(230, 230, 230, 0.712); 
+    margin: 0;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 18px;
+}
+
+main{
+    margin-top: 100px;
+}
+
+/*Formulario*/
+.register{
+    width: 1330px;
+}
+
+form {
+    margin: 0 auto;
+    padding: 2em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    background-color: rgb(255, 255, 255);
+}
+
+#profilePhoto, .textProfilePhoto{
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+  
+label {
+    text-align: right;
+}
+
+#abilities{
+    display: block;
+    margin: auto;
+
+}
+
+#textAbilities{
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding-top: 0.5333333333333333em;
+}
+
+input::placeholder {
+    font-family: 'Patrick Hand', cursive;
+  }
+
+.personalizacion {
+    display:inline;
+    font: 1em sans-serif;
+    width: 20em;
+    height: 20px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    vertical-align: top;
+    border-radius: 1.3333333333333333em;
+    font-family: 'Balsamiq Sans', cursive;
+}
+ 
+.personalizacionArea{
+    vertical-align: top;
+    height: 3.3333333333333335em;
+    width: 20em;
+    border: 1px solid #999;
+    border-radius: 1.3333333333333333em;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+.personalizacion:focus, .personalizacionArea:focus{
+    animation-name: clickOn;
+    animation-duration: 1s;
+    background-color: lightgrey;
+    border: 1px solid black;
+}
+
+button{
+    height: 2em;
+    border-radius: 1.3333333333333333em;
+    border-style: outset;
+    border-color: lightgrey;
+    background-color: white;
+    text-align: center;
+    font-weight: bold;
+    display: block;
+    margin: auto;
+}
+
+button:hover{
+    cursor: pointer;
+    border-style: outset;
+    background-color: rgb(192, 187, 187);
+    text-align: center;
+    font-weight: bold;
+    display: block;
+    margin: auto;
+}
+
+button:active{
+    border-style: inset;
+    border-color: rgb(112, 112, 112);
+    background-color: grey;
+    text-align: center;
+    font-weight: normal;
+    display: block;
+    margin: auto;
+}
+
+.point-radius:hover{
+    cursor:pointer;
+}
+
+#work, #work_2{
+    width: 10em;
+}
+#birth{
+    width: 13.333333333333334em;
+}
+
+/*Pie de pagina*/
+
+.pie_de_pagina{
+    text-align: center;
+    color: rgb(116, 116, 116);
+}
+
+/*responsive*/
+
+@media screen and (max-width: 1400px) {
+    .register{
+        width: 712px;
+    }
+
+    .personalizacion, .personalizacionArea {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .register{
+        width: 100%;
+    }
+
+    .personalizacion, .personalizacionArea {
+        width: 100%;
+    }
+
+    #birth{
+        width: 100%;
+    }
+
+    button{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 253px){
+    #work, #work_2{
+        width: 100%;
+    }
+}
