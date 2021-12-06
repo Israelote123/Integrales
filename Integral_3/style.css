@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&display=swap');
+
+@font-face {
+    font-family: 'Grandista';
+    src: url(font/Grandista.woff2) format(woff2);
+}
+
+@font-face {
+    font-family: 'Patrick Hand';
+    src: url(font/PatrickHand-Regular.ttf) format(ttf);
+}
+
+/* Barra de navegación*/
+.logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 20%;
+    margin:0%;
+}
+
+h1.titulo {
+    font-family: "Grandista";
+}
+
+#barraNav{
+    background-color: turquoise;
+    padding: 10px;
+    margin: 0;
+    padding-left: 0;
+    margin-left: 0;
+    border: turquoise;
+}
+
+/*Cuerpo*/
+body { 
+    background-color: rgba(230, 230, 230, 0.712); 
+    margin: 0;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 18px;
+}
+
+main{
+    margin-top: 100px;
+    display: block;
+    text-align: center;
+}
