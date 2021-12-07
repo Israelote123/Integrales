@@ -1,34 +1,54 @@
 const url = 'https://jsonplaceholder.typicode.com/users';
 let resultado;
-let usuarioN=0;
+var friend;
+let userFriends = new Array();
 
-function getUsuariosGit(){
+class amigo{
+    constructor(userId,nameUser,userName,email,address,phone,website,company){
+        this.userId = userId;
+        this.nameUser = nameUser;
+        this.userName = userName;
+        this.email = email;
+        this.address = address;
+        this.phone = phone;
+        this.website = website;
+        this.company = company;
+    }
+}
+
+function traerAmigos(){
     fetch(url)
         .then(response => response.json())
         .then(json => {
             console.log(json);
             resultado = json;
+            console.log(resultado);
         })
         .then(()=>{
-            usuarioN=parseInt(prompt("Ingrese el numero de usuario que quiere, debe ser del 1 al 10"))
-            usuarioN--;
-            while(usuarioN>9)
-            {
-                alert("Ingreso un numero no valido");
-                usuarioN=parseInt(prompt("Ingrese el numero de usuario que quiere, debe ser del 1 al 10"))
-                usuarioN--;
-            }
             
+            for( let x = 0; x < resultado.length; x++){
+            friend = new amigo();
+            friend.userId = resultado[x].id;
+            friend.nameUser = resultado[x].name;
+            friend.userName = resultado[x].username;
+            friend.email = resultado[x].email;
+            friend.address = resultado[x].address;
+            friend.phone = resultado[x].phone;
+            friend.website = resultado[x].website;
+            friend.company = resultado[x].company;
+            userFriends.push(friend);
+            }
+            console.log(userFriends);
         })
         .then(() => {
-            document.getElementById("photo").innerHTML = `Usuario: ${resultado[usuarioN].name} <br>Nombre de usuario: ${resultado[usuarioN].username}`;
-            document.getElementById("profile").innerHTML = `Direccion: ${resultado[usuarioN].address.street}, ${resultado[usuarioN].address.city}  <br>Telefono celular:  ${resultado[usuarioN].phone} <br> Empresa:  ${resultado[usuarioN].company.name} Email: ${resultado[0].email}`  ;
-            document.getElementById("data").innerHTML = `Descripcion: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis placeat, rerum natus dolorum inventore ab quos facere quidem illo dolorem tempore eius porro deleniti, tempora, vel voluptates et velit veniam.`;
-            
+            for(let x = 0; x < 10; x++){      
+            document.getElementById(`amigo${x}`).innerHTML = `${userFriends[x].userName}<br>${userFriends[x].company.name}`;
+            }
         })
         .catch(error => {
             console.log("Error al solicitar los datos")
+            console.log(error);
         })
 }
 
-getUsuariosGit()
+traerAmigos();
